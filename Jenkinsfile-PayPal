@@ -18,11 +18,6 @@ node{
    stage('5deploy_uat'){
     //sh "scp "
     deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://35.174.213.124:8080/')], contextPath: null, war: 'target/*war'
-  }
-  stage('6Approval'){
-    timeout(time:9, unit:'HOURS') {
-        input message: 'PayPal application ready for deployment, Please review and approve'
-    }
  }
  stage('7deploy_prod'){
      deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://35.174.213.124:8080/')], contextPath: null, war: 'target/*war'
@@ -34,5 +29,4 @@ node{
 Regards,
 Dominion Systems Inc.''', recipientProviders: [contributor(), developers(), buildUser()], subject: 'PayPal Build Status', to: 'blekizito@gmail.com'
  }
- 
-} 
+}
