@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>paypal-webapp-prod4</finalName>
+		<finalName>paypal-webapp-prod01</finalName>
 		
 		<plugins>
 			<plugin>
